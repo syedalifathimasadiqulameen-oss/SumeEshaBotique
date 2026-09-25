@@ -1,0 +1,854 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SumeEsha Boutique | Designer Stitching & Custom Wear</title>
+
+    <style>
+
+        /* ==============================
+           GLOBAL
+        ============================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #faf9f7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* ==============================
+           HEADER
+        ============================== */
+
+        header {
+            background: #222;
+            min-height: 90px;
+            padding: 12px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-bottom: 3px solid #d4af37;
+        }
+
+        header img {
+            position: absolute;
+            left: 5%;
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: #fff;
+            padding: 4px;
+        }
+
+        header h1 {
+            color: #d4af37;
+            font-size: 30px;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+
+        /* ==============================
+           NAVIGATION
+        ============================== */
+
+        nav {
+            background: #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            display: block;
+            color: #fff;
+            padding: 15px 22px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #d4af37;
+            background: #222;
+        }
+
+
+        /* ==============================
+           DROPDOWN
+        ============================== */
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 220px;
+            background: #333;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+
+        nav ul li:hover > ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            width: 100%;
+        }
+
+        nav ul li ul li a {
+            padding: 12px 18px;
+            border-bottom: 1px solid #444;
+            white-space: nowrap;
+        }
+
+        nav ul li ul li a:hover {
+            background: #222;
+            color: #d4af37;
+        }
+
+
+        /* ==============================
+           HERO / ADVERTISEMENT BANNER
+        ============================== */
+
+        .adv-banner {
+            position: relative;
+            width: 100%;
+            height: 430px;
+            overflow: hidden;
+            border-bottom: 3px solid #d4af37;
+        }
+
+        .adv-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(55%);
+            display: block;
+        }
+
+        .adv-banner::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to right,
+                rgba(0,0,0,0.55),
+                rgba(0,0,0,0.15)
+            );
+        }
+
+        .adv-text {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 90%;
+            color: #fff;
+        }
+
+        .adv-text h2 {
+            font-size: 44px;
+            color: #d4af37;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 8px #000;
+        }
+
+        .adv-text p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .adv-button {
+            display: inline-block;
+            background: #d4af37;
+            color: #222;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .adv-button:hover {
+            background: #fff;
+            transform: translateY(-2px);
+        }
+
+
+        /* ==============================
+           SECTION TITLE
+        ============================== */
+
+        .section-title {
+            text-align: center;
+            padding: 45px 20px 15px;
+        }
+
+        .section-title h2 {
+            display: inline-block;
+            color: #333;
+            font-size: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background: #d4af37;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: #777;
+            margin-top: 10px;
+        }
+
+
+        /* ==============================
+           SERVICES
+        ============================== */
+
+        .services {
+            max-width: 1200px;
+            margin: auto;
+            padding: 30px 25px 60px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .services > a {
+            color: inherit;
+            display: block;
+        }
+
+        .service-item {
+            height: 100%;
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            text-align: center;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.16);
+        }
+
+        .service-item img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .service-content {
+            padding: 20px;
+        }
+
+        .service-item h3 {
+            color: #b08d18;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .service-item p {
+            color: #666;
+            font-size: 14px;
+        }
+
+
+        /* ==============================
+           CONTACT
+        ============================== */
+
+        .contact {
+            background: #f1eee8;
+            padding: 55px 20px;
+            text-align: center;
+            border-top: 1px solid #ddd;
+        }
+
+        .contact h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .contact-info {
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        .contact-info p {
+            margin: 5px;
+        }
+
+        .contact-form {
+            max-width: 650px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 13px 15px;
+            margin-bottom: 15px;
+
+            border: 1px solid #ddd;
+            border-radius: 7px;
+
+            font-family: inherit;
+            font-size: 15px;
+
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #d4af37;
+            box-shadow: 0 0 0 2px rgba(212,175,55,0.12);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 13px;
+
+            border: none;
+            border-radius: 7px;
+
+            background: #d4af37;
+            color: #222;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #b7950b;
+            color: #fff;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            background: #222;
+            color: #ddd;
+            text-align: center;
+            padding: 22px 15px;
+            border-top: 3px solid #d4af37;
+        }
+
+        footer p {
+            margin: 4px;
+            font-size: 14px;
+        }
+
+        .footer-brand {
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+
+        /* ==============================
+           TABLET
+        ============================== */
+
+        @media (max-width: 900px) {
+
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .adv-text h2 {
+                font-size: 36px;
+            }
+
+        }
+
+
+        /* ==============================
+           MOBILE
+        ============================== */
+
+        @media (max-width: 600px) {
+
+            header {
+                min-height: 75px;
+            }
+
+            header img {
+                width: 55px;
+                height: 55px;
+                left: 15px;
+            }
+
+            header h1 {
+                font-size: 22px;
+                margin-left: 45px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+            }
+
+            nav ul li a {
+                padding: 11px 12px;
+                font-size: 13px;
+            }
+
+            nav ul li ul {
+                min-width: 190px;
+            }
+
+            .adv-banner {
+                height: 330px;
+            }
+
+            .adv-text h2 {
+                font-size: 28px;
+            }
+
+            .adv-text p {
+                font-size: 16px;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+                padding: 20px 18px 40px;
+            }
+
+            .service-item img {
+                height: 220px;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+
+<body>
+
+<!-- ==============================
+     HEADER
+============================== -->
+
+<header>
+
+    <img src="images/logo.jpg"
+         alt="SumeEsha Boutique Logo">
+
+    <h1>SumeEsha Boutique</h1>
+
+</header>
+
+
+<!-- ==============================
+     NAVIGATION
+============================== -->
+
+<nav>
+
+    <ul>
+
+        <li>
+            <a href="services.html">Services</a>
+        </li>
+
+        <li>
+
+            <a href="#">Stitching ▾</a>
+
+            <ul>
+
+                <li>
+                    <a href="kids.html">Kids Wear</a>
+                </li>
+
+                <li>
+                    <a href="pattu.jsp">
+                        Pattu Pavadai - Sattai
+                    </a>
+                </li>
+
+                <li>
+                    <a href="gown.html">Gown</a>
+                </li>
+
+                <li>
+                    <a href="blouse.jsp">
+                        Blouse (All Types)
+                    </a>
+                </li>
+
+                <li>
+                    <a href="churidar.html">
+                        Churidar (All Types)
+                    </a>
+                </li>
+
+                <li>
+                    <a href="other.html">
+                        Other Stitching Services
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+        <li>
+            <a href="contact.html">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- ==============================
+     ONE HERO BANNER ONLY
+============================== -->
+
+<section class="adv-banner">
+
+    <img src="images/home.jpg"
+         alt="SumeEsha Boutique Latest Collection">
+
+    <div class="adv-text">
+
+        <h2>Elegant. Exclusive. Yours.</h2>
+
+        <p>
+            Designer Stitching • Custom Fitting • Traditional Wear
+        </p>
+
+        <a href="#services" class="adv-button">
+            Explore Collection
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     SERVICES TITLE
+============================== -->
+
+<div class="section-title" id="services">
+
+    <h2>Our Services</h2>
+
+    <p>
+        Beautifully crafted outfits with attention to every detail.
+    </p>
+
+</div>
+
+
+<!-- ==============================
+     SERVICES
+============================== -->
+
+<section class="services">
+
+
+    <!-- KIDS -->
+
+    <a href="kids.html">
+
+        <div class="service-item">
+
+            <img src="images/kids.jpg"
+                 alt="Kids Wear">
+
+            <div class="service-content">
+
+                <h3>Kids Wear</h3>
+
+                <p>
+                    Beautifully tailored outfits for children
+                    with comfortable and stylish designs.
+                </p>
+
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <!-- PATTU PAVADAI -->
+
+    <a href="pattu.jsp">
+
+        <div class="service-item">
+
+            <img src="images/pattu.jpg"
+                 alt="Pattu Pavadai Sattai">
+
+            <div class="service-content">
+
+                <h3>Pattu Pavadai - Sattai</h3>
+
+                <p>
+                    Traditional ethnic wear with elegant
+                    finishing and beautiful detailing.
+                </p>
+
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <!-- GOWN -->
+
+    <a href="gown.html">
+
+        <div class="service-item">
+
+            <img src="images/gown.jpg"
+                 alt="Designer Gown">
+
+            <div class="service-content">
+
+                <h3>Gown</h3>
+
+                <p>
+                    Elegant gowns designed for parties,
+                    functions and special occasions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <!-- BLOUSE -->
+
+    <a href="blouse.jsp">
+
+        <div class="service-item">
+
+            <img src="images/blouse.jpg"
+                 alt="Designer Blouse">
+
+            <div class="service-content">
+
+                <h3>Blouse - All Types</h3>
+
+                <p>
+                    Designer blouses with custom fitting,
+                    neat finishing and modern styles.
+                </p>
+
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <!-- CHURIDAR -->
+
+    <a href="churidar.html">
+
+        <div class="service-item">
+
+            <img src="images/churidar.jpg"
+                 alt="Designer Churidar">
+
+            <div class="service-content">
+
+                <h3>Churidar - All Types</h3>
+
+                <p>
+                    Perfectly stitched churidars for daily,
+                    office and festive wear.
+                </p>
+
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <!-- OTHER SERVICES -->
+
+    <a href="other.html">
+
+        <div class="service-item">
+
+            <img src="images/other.jpg"
+                 alt="Other Stitching Services">
+
+            <div class="service-content">
+
+                <h3>Other Stitching Services</h3>
+
+                <p>
+                    Custom tailoring and stitching services
+                    according to your requirements.
+                </p>
+
+            </div>
+
+        </div>
+
+    </a>
+
+
+</section>
+
+
+<!-- ==============================
+     CONTACT
+============================== -->
+
+<section id="contact" class="contact">
+
+    <h2>Contact SumeEsha Boutique</h2>
+
+    <div class="contact-info">
+
+        <p>
+            <strong>Email:</strong>
+            syedalifathima.sadiqulameen@gmail.com
+        </p>
+
+        <p>
+            <strong>Phone:</strong>
+            +91 9962570760
+        </p>
+
+    </div>
+
+
+    <form class="contact-form">
+
+        <input
+            type="text"
+            placeholder="Your Name"
+            required>
+
+        <input
+            type="email"
+            placeholder="Your Email"
+            required>
+
+        <textarea
+            placeholder="Your Message"
+            rows="5"
+            required></textarea>
+
+        <button type="submit">
+            Send Enquiry
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- ==============================
+     FOOTER
+============================== -->
+
+<footer>
+
+    <p>
+        &copy; 2026
+        <span class="footer-brand">
+            SumeEsha Boutique
+        </span>.
+        All rights reserved.
+    </p>
+
+    <p>
+        Designer Stitching & Custom Boutique Services
+    </p>
+
+</footer>
+
+</body>
+
+
+</html>
+

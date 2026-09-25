@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pattu Pavadai Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.5);
+      z-index: 10;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Pattu Pavadai Gallery</h1>
+
+<div class="gallery">
+  <img src="images/pattu/pattu1.jpeg" alt="Pattu Pavadai 1">
+  <img src="images/pattu/pattu2.jpeg" alt="Pattu Pavadai 2">
+  <img src="images/pattu/pattu3.jpeg" alt="Pattu Pavadai 3">
+  <img src="images/pattu/pattu4.jpeg" alt="Pattu Pavadai 4">
+</div>
+
+</body>
+</html>
